@@ -6,8 +6,13 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+from collections import deque
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        box = []
+        box = deque()
+        for c in s:
+            if c.isalpha() or c.isnumeric():
+                box.append(c.lower())
+        s = ''.join(box)
+        return s==s[::-1]
