@@ -6,8 +6,17 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow, fast = head, head
+        while slow and fast and fast.next:
+            if slow != head and slow == fast or slow == fast.next:
+                return True
+            slow, fast = slow.next, fast.next.next
+        return False

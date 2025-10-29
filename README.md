@@ -5,7 +5,7 @@ A confidence-building 30-day plan focused on **easy wins** across multiple algor
 ## 🏁 Progress Tracking
 - Start Date: 2025-10-25
 - End Date: -
-- Current Progress: 1 / 30 problems solved ✅
+- Current Progress: 2 / 30 problems solved ✅
 
 ## 🎯 Goals
 - Finish **30 problems** in ~4–5 weeks (≈ 6–7 per week)
@@ -60,3 +60,16 @@ leetcode-30days-easy-boost/
 - Use a shared `path` list; **append → recurse → pop**.
 - Control branching with early exits (pruning) when possible.
 - Prefer parameters `(idx, path)` or `(remain, start)` patterns.
+
+
+
+├── README.md
+├── .gitignore
+├── 설명서
+├── main.py
+
+├── text/
+    └── easy.txt
+    └── medium.txt
+    └── hard.txt
+    └── .txt
