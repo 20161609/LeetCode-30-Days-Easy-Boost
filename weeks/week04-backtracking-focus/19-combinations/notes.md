@@ -3,13 +3,39 @@
 ## Link
 https://leetcode.com/problems/combinations/
 
+## Code
+``` python
+from collections import deque
+
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        answer = []
+        def backtrack(i, box):
+            if len(box) == k:
+                answer.append(list(box))
+                return
+            needs, extra = k - len(box), n - i + 1
+            if needs > extra: 
+                return
+            box.append(i), backtrack(i+1, box), box.pop(), backtrack(i+1, box)
+        
+        backtrack(1, deque())
+        return answer
+```
+
 ## Idea
-- <Summarize the core idea in 2–4 bullets.>
-- Topic: Backtracking
+- Generate all combinations of `k` numbers from `1` to `n` using **backtracking**.  
+- At each step, decide whether to include the current number `i`.  
+- If the current path’s length equals `k`, append a copy to `answer`.  
+- Use pruning: if remaining numbers (`extra = n - i + 1`) are fewer than needed (`needs = k - len(box)`), stop exploring that branch.
+
+**Topic:** Backtracking
 
 ## Complexity
-- Time: O(...)
-- Space: O(...)
+- **Time:** O(C(n, k)) — each valid combination generated once.  
+- **Space:** O(k) — recursion depth and temporary stack.
 
 ## Gotcha
-- <List 1–2 pitfalls or tricky cases.>
+- Always append with `list(box)` to avoid shared references.  
+- Pruning (`needs > extra`) saves unnecessary recursion calls.  
+- Start recursion from `1` to `n` inclusive.
