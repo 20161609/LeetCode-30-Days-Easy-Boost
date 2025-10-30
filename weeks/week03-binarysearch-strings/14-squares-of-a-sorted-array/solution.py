@@ -6,8 +6,6 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted(x**2 for x in nums)

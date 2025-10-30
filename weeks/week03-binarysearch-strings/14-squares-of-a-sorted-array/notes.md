@@ -3,13 +3,21 @@
 ## Link
 https://leetcode.com/problems/squares-of-a-sorted-array/
 
+## Code
+``` python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted(x**2 for x in nums)
+```
+
 ## Idea
-- <Summarize the core idea in 2–4 bullets.>
-- Topic: Two Pointers
+- Square every element and sort the results.  
+- Python’s `sorted()` handles sorting efficiently.
 
 ## Complexity
-- Time: O(...)
-- Space: O(...)
+- **Time:** O(n log n)  
+- **Space:** O(n)
 
 ## Gotcha
-- <List 1–2 pitfalls or tricky cases.>
+- Negative numbers become positive after squaring.  
+- Sorting is required to restore non-decreasing order.
