@@ -6,8 +6,14 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        n = len(nums)
+        cur, sum_nums = 0, sum(nums)
+        for i in range(n):
+            cur += nums[i]
+            if cur - nums[i] ==  sum_nums - cur:
+                # Left == Right
+                return i
+
+        return -1
