@@ -5,7 +5,7 @@ A confidence-building 30-day plan focused on **easy wins** across multiple algor
 ## 🏁 Progress Tracking
 - Start Date: 2025-10-25
 - End Date: -
-- Current Progress: 11 / 30 problems solved ✅
+- Current Progress: 12 / 30 problems solved ✅
 
 ## 🎯 Goals
 - Finish **30 problems** in ~4–5 weeks (≈ 6–7 per week)

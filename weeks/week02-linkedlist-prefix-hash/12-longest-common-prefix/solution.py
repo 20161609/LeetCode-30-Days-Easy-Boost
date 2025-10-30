@@ -6,8 +6,12 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        box = []
+        for i in range(min(len(s) for s in strs)):
+            for s in strs:
+                if strs[0][i] != s[i]:
+                    return ''.join(box)
+            box.append(strs[0][i])
+        return ''.join(box)
