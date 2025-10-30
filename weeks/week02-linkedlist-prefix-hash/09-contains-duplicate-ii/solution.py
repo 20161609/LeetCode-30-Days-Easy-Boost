@@ -6,8 +6,12 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+from collections import defaultdict
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        box = defaultdict(int)        
+        for i, v in enumerate(nums):
+            if (v in box) and (i - box[v] <= k):
+                return True
+            box[v] = i
+        return False
