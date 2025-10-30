@@ -6,8 +6,13 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+
+from collections import defaultdict
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        freq = defaultdict(int)        
+        for v in nums:
+            freq[v] += 1
+            if freq[v] > n // 2:
+                return v
