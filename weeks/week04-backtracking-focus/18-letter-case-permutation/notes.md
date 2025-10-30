@@ -1,22 +1,51 @@
 # Notes
 
 ## Link
-https://leetcode.com/problems/binary-watch/
+https://leetcode.com/problems/letter-case-permutation/
 
 ## Code
+``` python
+from collections import deque
 
+class Solution:
+    def letterCasePermutation(self, s: str) -> List[str]:
+        n = len(s)
+        answer = []
+        def backtrack(i, box):
+            if i == n:
+                answer.append(''.join(box))
+                return
+            
+            box.append(s[i])
+            backtrack(i+1, box)
+            box.pop()
+
+            if s[i].isupper():
+                box.append(s[i].lower())
+                backtrack(i+1, box)
+                box.pop()
+            elif s[i].islower():
+                box.append(s[i].upper())
+                backtrack(i+1, box)
+                box.pop()
+
+        backtrack(0, deque())
+        return answer
+```
 
 ## Idea
-- Use backtracking to count all combinations of turned-on LEDs for hours and minutes.  
-- Store possible sums in dictionaries `h_box` and `m_box` grouped by LED count.  
-- Combine hours and minutes where total LEDs equal `turnedOn`.  
-- Format minutes with `f"{100+m}"[1:]` to ensure two-digit formatting.
+- Use **backtracking** to explore all possible letter case combinations of the given string.  
+- At each position `i`, always include the current character as-is.  
+- If it’s a letter, also include its opposite case (`upper` ↔ `lower`) and recurse.  
+- Append completed strings to `answer` when `i == n`.
+
+**Topic:** Backtracking
 
 ## Complexity
-- **Time:** O(1) — constant range of hours/minutes.  
-- **Space:** O(1) — limited combinations stored.
+- **Time:** O(2^n) — each letter can branch into two cases.  
+- **Space:** O(n) — recursion depth and temporary list.
 
 ## Gotcha
-- Prune when `_sum > max_value` (invalid hour/minute).  
-- Use sets to prevent duplicates.  
-- Hours ≤ 11, minutes ≤ 59.
+- Digits remain unchanged (no branching).  
+- Append and pop carefully to maintain the current path.  
+- Use `deque` for efficient append/pop operations.
