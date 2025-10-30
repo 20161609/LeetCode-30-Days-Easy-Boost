@@ -1,15 +1,22 @@
 # Notes
 
 ## Link
-https://leetcode.com/problems/letter-case-permutation/
+https://leetcode.com/problems/binary-watch/
+
+## Code
+
 
 ## Idea
-- <Summarize the core idea in 2–4 bullets.>
-- Topic: Backtracking
+- Use backtracking to count all combinations of turned-on LEDs for hours and minutes.  
+- Store possible sums in dictionaries `h_box` and `m_box` grouped by LED count.  
+- Combine hours and minutes where total LEDs equal `turnedOn`.  
+- Format minutes with `f"{100+m}"[1:]` to ensure two-digit formatting.
 
 ## Complexity
-- Time: O(...)
-- Space: O(...)
+- **Time:** O(1) — constant range of hours/minutes.  
+- **Space:** O(1) — limited combinations stored.
 
 ## Gotcha
-- <List 1–2 pitfalls or tricky cases.>
+- Prune when `_sum > max_value` (invalid hour/minute).  
+- Use sets to prevent duplicates.  
+- Hours ≤ 11, minutes ≤ 59.
