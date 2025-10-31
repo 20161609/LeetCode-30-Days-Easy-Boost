@@ -6,8 +6,16 @@ Difficulty: Easy
 
 Note: Replace this file with your accepted solution.
 """
-# Paste your final accepted solution below.
-# Example scaffold:
-# class Solution:
-#     def solve(self, *args, **kwargs):
-#         pass
+from collections import deque
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        answer, stack = 0, deque()
+        for p in prices:
+            if stack and stack[-1] > p:
+                answer += stack[-1] - stack[0]
+                stack.clear()
+            stack.append(p)
+        if stack:
+            answer += stack[-1] - stack[0]
+        return answer
