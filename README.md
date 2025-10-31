@@ -1,11 +1,11 @@
-# LeetCode 30 Days — Easy Boost (with Backtracking)
+# LeetCode 30 Days — Easy Boost (Complete)
 
 A confidence-building 30-day plan focused on **easy wins** across multiple algorithms, with a dedicated **Backtracking** block. Designed to keep momentum high while rounding out fundamentals.
 
 ## 🏁 Progress Tracking
 - Start Date: 2025-10-25
-- End Date: -
-- Current Progress: 24 / 30 problems solved ✅
+- End Date: 2025-10-31
+- Current Progress: 30 / 30 problems solved ✅
 
 ## 🎯 Goals
 - Finish **30 problems** in ~4–5 weeks (≈ 6–7 per week)
